@@ -1,0 +1,32 @@
+﻿@page "/videoswitcher"
+<PageTitle>Video Switcher</PageTitle>
+
+
+<h3>VideoSwitcher</h3>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Switch video</button>
+<br />
+@if (currentCount % 2 == 0)
+{
+    <br />
+    <div class="container">
+        <iframe class="responsive-iframe" src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+    </div>
+    }
+else
+{
+    <br />
+    <div class="container">
+        <iframe class="responsive-iframe" src="https://www.youtube.com/embed/4r7wHMg5Yjg"></iframe>
+    </div>}
+
+
+@code {
+    int currentCount = 0;
+
+    void IncrementCount()
+    {
+        currentCount++;
+    }
+}
+
