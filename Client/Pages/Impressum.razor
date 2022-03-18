@@ -1,16 +1,97 @@
 ﻿@page "/impressum"
+@using BlazorApp.Client.Models
 <PageTitle>Impressum</PageTitle>
 <h3>Impressum</h3>
 
-Vorname und Name Max Mustermann <br>
-Strasse und Hausnummer Musterstrasse 1<br>
-Postleitzahl und Ort 8000 Musterstadt Schweiz<br>
-Telefonnummer 044 000 00 00 <br>
-ggf. Fax wenn vorhanden oder gewünscht<br>
-E-Mail Max.Muster@hshs.ch <br>
-Umsatzsteuer-Identifikationsnummer wenn vorhanden<br>
+<div><pre>
+Vorname und Name Max Mustermann
+Strasse und Hausnummer Musterstrasse 1
+Postleitzahl und Ort 8000 Musterstadt Schweiz
+Telefonnummer 044 000 00 00
+ggf. Fax wenn vorhanden oder gewünscht
+E-Mail Max.Muster@hshs.ch
+Umsatzsteuer-Identifikationsnummer wenn vorhanden
+</pre>
+</div>
+<div>
+<span>Websites bestehen typischerweise aus verschiedenen Inhalten wie Texten und Fotos («Content»), die mit Auszeichnungssprachen wie HTML und Programmiersprachen wie JavaScript strukturiert und dargestellt werden. Die Verwendung solcher Inhalte regelt das Immaterialgüterrecht und dabei insbesondere das Urheberrecht. Das Urheberrecht gilt auch im Internet, urheberrechtliche Lücken bestehen allein aufgrund der Verwendung von Inhalten im Internet nicht.</span>
 
+<span>Inhalte auf einer Website sind geschützt, wenn sie</span>
+<ul>
+    <li>«Werke der Literatur und Kunst» im Sinn des URG darstellen</li>
+    <li>nicht vom Urheberrechtsschutz ausgeschlossen sind</li>
+    <li>eine geistige Schöpfung darstellen und</li>
+    <li>eine geistige Schöpfung darstellen und</li>
+    <li>über individuellen Charakter verfügen</li>
+</ul>
+</div>
+<div>
+<span>
+Wer ein solches Werk erstellt, gilt als Urheberin oder Urheber und kann über die Verwendung seiner Inhalte selbst bestimmen. Die Grenzen zwischen Inhalten mit und ohne Schutz sind oftmals fliessend, doch sollen nachfolgende Angaben als Anhaltspunkte dienen.
+</span>
+<ol>
+    <li> <span>Werke der Literatur und Kunst: Geschützt sind nicht nur schöngeistige Werke von anerkannt hoher Qualität, sondern unter anderem auch alle Arten von Texten (Sprachwerke), Musik (akustische Werke), Bilder und Fotos (visuelle oder audiovisuelle Werke) und Computerprogramme. Ebenfalls geschützt sind Titel, Entwürfe und Teile von Werken. Der Schutz besteht unabhängig von Kosten, Preis, Aufwand und Zweck für ein Werk.</span></li>
+
+    <li> <span>Kein Urheberrechtsschutz: Nicht geschützte Werke sind unter anderem Ideen – nur deren Umsetzung geniesst Schutz –, Werke mit abgelaufener Schutzfrist – spätestens 70 Jahre nach dem Tod des Urhebers beziehungsweise des letzten beteiligten Miturhebers –, und amtliche Erlasse wie Gesetze und Verordnungen. Werke unter freien Lizenzen wie beispielsweise jenen von Creative Commons sind urheberrechtlich geschützt, doch erlauben die Urheber die weitgehend freie Verwendung unter bestimmten Voraussetzungen.</span></li>
+
+    <li> <span>Geistige Schöpfung: Das Werk muss von einem oder mehreren Menschen geschaffen worden sein, das heisst das Ergebnis einer menschlichen Tätigkeit darstellen. Die Ergebnisse automatischer Prozesse ohne bestimmendes menschliches Gestalten sind nicht geschützt, wobei die Verwendung von Software zur Erstellung urheberrechtlichen Schutz nicht ausschliesst.</span></li>
+
+    <li> <span>Individueller Charakter: Das Werk muss über eine gewisse Individualität und Originalität verfügen und sich ausreichend von anderen Werken unterscheiden. Diese Unterscheidung erfolgt insbesondere durch  charakteristische und einzigartige Merkmale erfolgen. Das Werk muss sich im Vergleich mit bereits bestehenden Werken ähnlicher Art deutlich abheben.</span></li>
+</ol>
+</div>
+<div>
+<h4>Urheberrechtlich geschützte Website?</h4>
+
+<span>Websites mit Texten, Bildern und Fotos und sonstigen Inhalten, die obigen Anhaltspunkten entsprechen, sind grundsätzlich urheberrechtlich geschützt. Genauso sind die Strukturierung und Darstellung, die aus der verwendeten Auszeichnungssprache resultieren, geschützt. Schutz geniesst auch der Quelltext der verwendeten Programmiersprachen (Computerprogramme), wie sie heute beim Veröffentlichen von Websites üblicherweise Verwendung finden.</span>
+
+<span>Kein urheberrechtlicher Schutz besteht hingegen für reine Gestaltungs- und Layoutideen einer Website. Geschützt ist lediglich für ihre konkrete Umsetzung als Website möglich, wobei bereits der Entwurf geschützt sein kann.</span>
+
+<span>In der Schweiz ist ein Werk urheberrechtlich geschützt, sobald es geschaffen wurde. Aus diesem Grund ist kein «Copyright»-Hinweis notwendig und es besteht kein Register, in das ein Eintrag erfolgen könnte. Ein Hinweis kann aber angebracht werden, um Besuchern der Website als Hinweis zu dienen sowie in ausländischen Rechtsordnungen allenfalls urheberrechtliche Schutzwirkung zu entfalten (beispielsweise «© Max Muster 2011»).</span>
+
+<span>Wer selbst eine Website mit urheberrechtlich geschützten Inhalten pflegt, kann gegen andere Websites, die diese Inhalte ohne Zustimmung verwenden, rechtlich vorgehen. Umgekehrt kann die eigene Verwendung urheberrechtlich geschützter Inhalte ohne Zustimmung zu rechtlichen Folgen führen – berühmt-berüchtigt sind beispielsweise die «Abmahnungen» von Getty Images. Im Zweifelsfall ist im eigenen Interesse davon auszugehen, dass Inhalte auf Websites urheberrechtlich geschützt sind und deshalb die Verwendung nur mit Zustimmung des Urhebers möglich ist.</span>
+</div>
+<div>
+
+    @foreach(QA qa in questions){
+        <br />
+        <details class="tree-nav__item is-expandable">
+            <summary class="tree-nav__item-title">@qa.Question</summary>
+            <div class="tree-nav__item">
+                <span class="tree-nav__item-title"><i class="oi oi-globe"></i>&emsp; @qa.Answer</span>
+            </div>
+        </details>
+    }
+
+</div>
 
 @code {
+
+    List<QA> questions = new()
+    {
+        new QA(){ Question = "Wann wurde das Urheberrecht zum erstem Mal Veröffentlicht?", 
+                    Answer = "9. Oktober 1992"},
+        new QA(){ Question = "Welche beiden Rechte hat ausschliesslich der Urheber:in?", 
+                    Answer = "ob, wann und wie das Werk geändert werden kann und wie es zur Schaffung einer Werks zweiter Hand verwendet werden darf."},
+        new QA(){ Question = "Sind Zahlungsmittel ein geschütztes Werk laut URG?", 
+                    Answer = "Nein"},
+        new QA(){ Question = "Was bedeutet die Abkürzung \"IGE\"?", 
+                    Answer = "Institut für Geistiges Eigentum "},
+        new QA(){ Question = "Darf ein Urheberecht gegen Lizengebühren ausgeliehen werden?", 
+                    Answer = "Ja das ist kein Problem"},
+        new QA(){ Question = "Welche Bestandteile sind Pflicht in einem Impressum?", 
+                    Answer = "Vorname/Name/Firmenname, Postadresse, Email"},
+        new QA(){ Question = "Was ist das Ziel des Urheberrechtes?", 
+                    Answer = "Das Urheberrechtsgesetz (URG) will die wirtschaftlichen und persönlichkeitsrechtlichen Interessen der Urheber von Werken schützen."},
+        new QA(){ Question = "Hat eine andere Person Urhebberecht auf ein Bild, welches man selbst von ihnen geschossen hat?", 
+                    Answer = "Ja, denn erscheinen natürliche Personen auf einem Bild, müssen sich diese vorgängig mit der Publikation des Bildes einverstanden erklärt haben."},
+        new QA(){ Question = "Darf ich meine Webseite \"www.zuerich.xvbs\" nennen?", 
+                    Answer = "Nein, Namen von Städten, Gemeinden, berühmten Persönlichkeiten und bekannten Unternehmen dürfen nicht genutzt werden."},
+        new QA(){ Question = "Bin ich als Websitebetreiber Schuld, wenn ein Link auf eine andere Webseite enthält und diese den Nutzer mit einem Virus infiziert?", 
+                    Answer = "Die Frage, ob der Betreiber einer Website für die auf Internetseiten von Dritten publizierten Inhalte, auf die er mittels eines Links verweist, haftet, ist nicht endgültig geklärt. Aus diesem Grund ist zu empfehlen, stets einen Haftungsausschluss (sog. Disclaimer) zu formulieren. "},
+     
+    };
+
+    
+   
 
 }

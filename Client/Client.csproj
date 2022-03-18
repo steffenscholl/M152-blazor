@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -8,10 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Blazorise" Version="1.0.1" />
     <PackageReference Include="Blazorise.Bootstrap" Version="1.0.1" />
     <PackageReference Include="Blazorise.Icons.FontAwesome" Version="1.0.1" />
     <PackageReference Include="Blazorise.Video" Version="1.0.1" />
+    <PackageReference Include="BytexDigital.Blazor.Components.CookieConsent" Version="1.0.5" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.0" PrivateAssets="all" />
     <PackageReference Include="Radzen.Blazor" Version="3.16.2" />

@@ -10,16 +10,26 @@
 @if (currentCount % 2 == 0)
 {
     <br />
-    <div class="container">
+    <Div class="container" Height ="Height.Is50">
         <iframe class="responsive-iframe" src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
-    </div>
+    </Div>
     }
 else
 {
     <br />
-    <div class="container">
+    <Div class="container" Height ="Height.Is50">
         <iframe class="responsive-iframe" src="https://www.youtube.com/embed/4r7wHMg5Yjg"></iframe>
-    </div>}
+    </Div>
+}
+
+<br />
+<br />
+<Div Width="Width.Is25">
+    <Video Source="@("videos/1.mp4")" Width="Width.Is100" />
+    <Video Source="@("videos/2.mp4")" Width="Width.Is100" />
+</Div>
+
+
 
 
 @code {
