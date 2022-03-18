@@ -1,9 +1,64 @@
 ﻿@page "/css"
+@using Blazor.Extensions
+@using Blazor.Extensions.Canvas.Canvas2D
 
 <h3>CssAnimations</h3>
+    <RadzenCard class="m-6" style="height:200px;" ><div class="spinner" ></div></RadzenCard>
+    <RadzenCard class="m-6">
+    <pre>
+.spinner {
+    border: 16px solid silver;
+    border-top: 16px solid #337AB7;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 700ms linear infinite;
+    top: 40%;
+    left: 55%;
+    position: absolute;
+}
+</pre>
+</RadzenCard>
+<RadzenCard class="m-6"> 
+    <h4>GIF</h4>
+    <RadzenImage Path="images/giphy.gif" Style="max-width: 60%; margin: 3rem;" />
+</RadzenCard>
+<RadzenCard class="m-6"> 
+    <h4>SVG</h4>
+    <RadzenImage Path="images/svg.svg" Style="max-width: 60%; margin: 3rem;" />
+</RadzenCard>
+    <RadzenCard class="m-6">
+<pre>
+@@keyframes spin {
+    0% {
+        transform: rotate(0deg)
+    }
 
-<Div Class="spinner" />
+    100% {
+        transform: rotate(360deg)
+    }
+}
+    </pre>
+    </RadzenCard>
+
+<RadzenCard class="m-6"> 
+    <h4>Canvas</h4>
+    <BECanvas Width="300" Height="400" @ref="_canvasReference" ></BECanvas>
+</RadzenCard>
 
 @code {
+    private Canvas2DContext _context;
 
+protected BECanvasComponent _canvasReference;
+
+protected override async Task OnAfterRenderAsync(bool firstRender)
+{
+    this._context = await this._canvasReference.CreateCanvas2DAsync();
+    await this._context.SetFillStyleAsync("green");
+
+    await this._context.FillRectAsync(10, 100, 100, 100);
+
+    await this._context.SetFontAsync("48px serif");
+    await this._context.StrokeTextAsync("Hello Blazor!!!", 10, 100);
+}
 }

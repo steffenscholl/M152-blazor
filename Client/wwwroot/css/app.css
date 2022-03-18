@@ -86,6 +86,10 @@ body {
     width: 1.6rem;
     text-align: center;
 }
+.blinker {
+    border:1px solid black;
+
+}
 
 .spinner {
     border: 16px solid silver;
