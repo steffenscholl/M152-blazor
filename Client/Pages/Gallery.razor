@@ -1,0 +1,33 @@
+﻿@page "/gallery"
+
+<Div Width="Width.Is25">
+    <Carousel @bind-SelectedSlide="@selectedSlide">
+        <CarouselSlide Name="1">
+            <Image Source="images/country.jpg" Text="Countryside" Display="Display.Block" Width="Width.Auto" />
+        </CarouselSlide>
+        <CarouselSlide Name="2">
+            <Image Source="images/cow.jpg" Text="Cow" Display="Display.Block" Width="Width.Auto" />
+        </CarouselSlide>
+        <CarouselSlide Name="3">
+            <Image Source="images/flower.jpg" Text="Sunflower" Display="Display.Block" Width="Width.Auto" />
+        </CarouselSlide>
+        <CarouselSlide Name="4">
+            <Image Source="images/maca.jpg" Text="Macarons" Display="Display.Block" Width="Width.Auto" />
+        </CarouselSlide>
+        <CarouselSlide Name="5">
+            <Image Source="images/mm.png" Text="M&M" Display="Display.Block" Width="Width.Auto" />
+        </CarouselSlide>
+    </Carousel>
+</Div>
+
+<Div>
+    <Span>
+        This Gallery is created by using Blazorise and it's Carousel component
+    </Span>
+</Div>
+
+
+
+@code{
+    private string selectedSlide = "2";
+}
