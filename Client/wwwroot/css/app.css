@@ -6,6 +6,55 @@ summary {
     outline: 0;
 }
 
+@keyframes wiggle {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    80% {
+        transform: rotate(0deg);
+    }
+
+    85% {
+        transform: rotate(5deg);
+    }
+
+    95% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+h5.wiggle {
+    display: inline-block;
+    animation: wiggle 2.5s infinite;
+}
+
+h5.wiggle:hover {
+    animation: none;
+}
+
+
+.box {
+    border-style: solid;
+    border-width: 1px;
+    display: block;
+    width: 100px;
+    height: 100px;
+    background-color: #0000FF;
+    transition: width 2s, height 2s, background-color 2s, transform 2s;
+}
+
+.box:hover {
+    background-color: #FFCCCC;
+    width: 200px;
+    height: 200px;
+    transform: rotate(180deg);
+}
+
 body {
     background-color: #191c1e;
     color: white;
@@ -51,7 +100,7 @@ body {
     will-change: transform;
     transition: transform 300ms ease;
     font-family: "ionicons";
-    color: #fff;
+    color: black;
     font-size: 1.1rem;
     content: "\f125";
     left: 0;
@@ -64,7 +113,7 @@ body {
     cursor: pointer;
     display: block;
     outline: 0;
-    color: #fff;
+    color: black;
     font-size: 1.5rem;
     line-height: 3.2rem;
 }

@@ -1,50 +1,59 @@
 ﻿@page "/css"
 @using Blazor.Extensions
 @using Blazor.Extensions.Canvas.Canvas2D
-
-<h3>CssAnimations</h3>
-    <RadzenCard class="m-6" style="height:200px;" ><div class="spinner" ></div></RadzenCard>
-    <RadzenCard class="m-6">
-    <pre>
-.spinner {
-    border: 16px solid silver;
-    border-top: 16px solid #337AB7;
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    animation: spin 700ms linear infinite;
-    top: 40%;
-    left: 55%;
-    position: absolute;
-}
-</pre>
-</RadzenCard>
-<RadzenCard class="m-6"> 
-    <h4>GIF</h4>
-    <RadzenImage Path="images/giphy.gif" Style="max-width: 60%; margin: 3rem;" />
-</RadzenCard>
-<RadzenCard class="m-6"> 
-    <h4>SVG</h4>
-    <RadzenImage Path="images/svg.svg" Style="max-width: 60%; margin: 3rem;" />
-</RadzenCard>
-    <RadzenCard class="m-6">
-<pre>
-@@keyframes spin {
-    0% {
-        transform: rotate(0deg)
+<Div Width=Width.Is50>
+    <h3>CssAnimations</h3>
+        <RadzenCard class="m-6" style="height:200px;" ><div class="spinner" ></div></RadzenCard>
+        <RadzenCard class="m-6">
+        <pre>
+    .spinner {
+        border: 16px solid silver;
+        border-top: 16px solid #337AB7;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        animation: spin 700ms linear infinite;
+        top: 40%;
+        left: 55%;
+        position: absolute;
     }
-
-    100% {
-        transform: rotate(360deg)
-    }
-}
     </pre>
     </RadzenCard>
+    <RadzenCard class="m-6"> 
+        <h4>GIF</h4>
+        <RadzenImage Path="images/giphy.gif" Style="max-width: 60%; margin: 3rem;" />
+    </RadzenCard>
+    <RadzenCard class="m-6"> 
+        <h4>SVG</h4>
+        <RadzenImage Path="images/svg.svg" Style="max-width: 60%; margin: 3rem;" />
+    </RadzenCard>
+        <RadzenCard class="m-6">
+            <h3>Kexframes added simply in css</h3>
+    <pre>
+    @@keyframes spin {
+        0% {
+            transform: rotate(0deg)
+        }
 
-<RadzenCard class="m-6"> 
-    <h4>Canvas</h4>
-    <BECanvas Width="300" Height="400" @ref="_canvasReference" ></BECanvas>
-</RadzenCard>
+        100% {
+            transform: rotate(360deg)
+        }
+    }
+        </pre>
+        </RadzenCard>
+
+    <RadzenCard class="m-6" > 
+        <h4>Canvas</h4>
+        <BECanvas Width="200" Height="300" @ref="_canvasReference" ></BECanvas>
+    </RadzenCard>
+    <RadzenCard>
+        <h4>Transitions</h4>
+        <div class="box"></div>
+    </RadzenCard>
+    <RadzenCard >
+        <h5 class="wiggle">wiggle</h5>
+    </RadzenCard>
+</Div>
 
 @code {
     private Canvas2DContext _context;
